@@ -23,15 +23,15 @@
 .cookie-consent-content {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 1.1rem 1.25rem;
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
     flex-wrap: wrap;
 }
 
 .cookie-icon {
-    font-size: 3rem;
+    font-size: 2rem;
     color: var(--primary-color);
     flex-shrink: 0;
 }
@@ -42,15 +42,16 @@
 }
 
 .cookie-text h3 {
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 0.35rem;
     color: var(--text-primary);
 }
 
 .cookie-text p {
     color: var(--text-secondary);
-    margin-bottom: 0.5rem;
-    line-height: 1.6;
+    margin-bottom: 0.3rem;
+    line-height: 1.45;
+    font-size: 0.9rem;
 }
 
 .cookie-text a {
@@ -65,10 +66,10 @@
 }
 
 .cookie-btn {
-    padding: 0.75rem 1.5rem;
+    padding: 0.62rem 1rem;
     border: none;
     border-radius: 8px;
-    font-size: 1rem;
+    font-size: 0.88rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -377,21 +378,39 @@
     .cookie-consent-content {
         flex-direction: column;
         text-align: center;
-        padding: 1.5rem;
+        padding: 0.9rem;
     }
 
     .cookie-icon {
-        font-size: 2.5rem;
+        font-size: 1.7rem;
+    }
+
+    .cookie-text {
+        min-width: 0;
+    }
+
+    .cookie-text h3 {
+        font-size: 0.95rem;
+    }
+
+    .cookie-text p {
+        font-size: 0.82rem;
+        margin-bottom: 0.2rem;
     }
 
     .cookie-actions {
         width: 100%;
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: center;
+        gap: 0.5rem;
     }
 
     .cookie-btn {
-        width: 100%;
+        width: auto;
         justify-content: center;
+        min-width: 120px;
+        padding: 0.52rem 0.75rem;
+        font-size: 0.8rem;
     }
 
     .cookie-settings-content {
@@ -417,6 +436,16 @@
         bottom: 80px;
         right: 20px;
         left: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .cookie-actions {
+        flex-direction: column;
+    }
+
+    .cookie-btn {
+        width: 100%;
     }
 }
 
