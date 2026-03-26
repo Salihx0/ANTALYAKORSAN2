@@ -52,6 +52,7 @@ $current_theme = $_COOKIE['theme'] ?? DEFAULT_THEME;
     <link rel="stylesheet" href="<?php echo assets_url('css/animations.css'); ?>">
     <link rel="stylesheet" href="<?php echo assets_url('css/responsive.css'); ?>">
     <link rel="stylesheet" href="<?php echo assets_url('css/mobile-redesign.css'); ?>">
+    <link rel="stylesheet" href="<?php echo assets_url('css/fixed-contact-buttons.css'); ?>">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

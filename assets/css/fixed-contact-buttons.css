@@ -1,0 +1,94 @@
+/* ============================================
+   SABİT İLETİŞİM BUTONLARI
+   ============================================ */
+
+.fixed-contact-buttons {
+    position: fixed;
+    inset: auto 0 24px 0;
+    z-index: 9997;
+    pointer-events: none;
+}
+
+.fixed-contact-btn {
+    position: fixed;
+    bottom: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    min-height: 52px;
+    padding: 0.8rem 1.2rem;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: #fff;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    pointer-events: auto;
+}
+
+.fixed-contact-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.34);
+}
+
+.fixed-contact-btn:focus-visible {
+    outline: 3px solid rgba(255, 255, 255, 0.5);
+    outline-offset: 2px;
+}
+
+.fixed-whatsapp-btn {
+    right: 24px;
+    background: linear-gradient(135deg, #25D366, #128C7E);
+}
+
+.fixed-phone-btn {
+    left: 24px;
+    background: linear-gradient(135deg, #1f6feb, #144b9b);
+}
+
+.fixed-contact-btn i {
+    font-size: 1.1rem;
+}
+
+/* Mobilde WhatsApp orta alana, telefon butonu alt orta kısma alınır */
+@media (max-width: 1024px) {
+    .fixed-contact-btn {
+        bottom: 18px;
+        min-height: 48px;
+        padding: 0.72rem 1rem;
+        font-size: 0.88rem;
+    }
+
+    .fixed-whatsapp-btn {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+    }
+
+    .fixed-whatsapp-btn:hover {
+        transform: translateX(-50%) translateY(-2px);
+    }
+
+    .fixed-phone-btn {
+        left: 16px;
+        bottom: 76px;
+    }
+}
+
+@media (max-width: 480px) {
+    .fixed-contact-btn {
+        padding: 0.66rem 0.95rem;
+        font-size: 0.84rem;
+    }
+
+    .fixed-whatsapp-btn {
+        bottom: 16px;
+    }
+
+    .fixed-phone-btn {
+        bottom: 72px;
+        left: 12px;
+    }
+}

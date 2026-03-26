@@ -154,6 +154,26 @@ if (!defined('SITE_URL')) {
     <button type="button" class="scroll-to-top" id="scroll-to-top" aria-label="Yukarı Çık">
         <i class="fas fa-chevron-up"></i>
     </button>
+
+    <!-- Fixed Contact Buttons (All Pages) -->
+    <div class="fixed-contact-buttons" aria-label="Sabit iletişim butonları">
+        <a
+            href="https://wa.me/905070073210?text=<?php echo urlencode('araç çağırmak istiyorum.'); ?>"
+            target="_blank"
+            rel="noopener"
+            class="fixed-contact-btn fixed-whatsapp-btn"
+            aria-label="WhatsApp ile Araç Çağır">
+            <i class="fab fa-whatsapp"></i>
+            <span>ARAÇ ÇAĞIR</span>
+        </a>
+        <a
+            href="tel:+905070073210"
+            class="fixed-contact-btn fixed-phone-btn"
+            aria-label="Hemen Ara">
+            <i class="fas fa-phone"></i>
+            <span>HEMEN ARA</span>
+        </a>
+    </div>
     
     <!-- Cookie Consent CSS & JS -->
     <link rel="stylesheet" href="<?php echo assets_url('css/cookie-consent.css'); ?>">
@@ -168,7 +188,6 @@ if (!defined('SITE_URL')) {
     <script src="<?php echo assets_url('js/cursor.js'); ?>"></script>
     <?php endif; ?>
     <script src="<?php echo assets_url('js/theme.js'); ?>"></script>
-    <script src="<?php echo assets_url('js/whatsapp.js'); ?>"></script>
     <script src="<?php echo assets_url('js/animations.js'); ?>"></script>
     
     <!-- Additional Scripts -->
