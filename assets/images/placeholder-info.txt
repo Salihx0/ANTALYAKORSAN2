@@ -1,0 +1,56 @@
+# PLACEHOLDER GÖRSELLER
+
+Bu klasörde eksik olan görseller için placeholder'lar bulunmalıdır.
+
+## Gerekli Görseller:
+
+### Logo
+- assets/images/logo/logo.png (200x60px)
+- assets/images/logo/favicon-32x32.png
+- assets/images/logo/favicon-16x16.png
+- assets/images/logo/apple-touch-icon.png (180x180px)
+
+### Hero
+- assets/images/hero/hero-main.jpg (1920x1080px)
+
+### Video
+- assets/videos/taxi-hero.mp4 (1920x1080px, 10-15 saniye)
+
+### Blog
+- assets/images/blog/placeholder.jpg (800x600px)
+- assets/images/blog/placeholder-1.jpg
+- assets/images/blog/placeholder-2.jpg
+- assets/images/blog/placeholder-3.jpg
+
+### Why Us
+- assets/images/why-us/taxi-driver.jpg (800x600px)
+
+### CTA
+- assets/images/cta-bg.jpg (1920x600px)
+
+## Placeholder Oluşturma:
+
+Görseller yoksa, aşağıdaki yöntemlerle placeholder oluşturabilirsiniz:
+
+1. **Online Araçlar:**
+   - https://placeholder.com/
+   - https://via.placeholder.com/
+   - https://placehold.co/
+
+2. **Örnek Kullanım:**
+   ```
+   https://via.placeholder.com/1920x1080/FFD700/1A1A1A?text=Antalya+Korsan+Taksi
+   ```
+
+3. **Gerçek Görseller:**
+   - Unsplash.com (ücretsiz, yüksek kalite)
+   - Pexels.com (ücretsiz)
+   - Pixabay.com (ücretsiz)
+
+## Arama Terimleri:
+- "taxi driver"
+- "yellow taxi"
+- "airport transfer"
+- "professional driver"
+- "antalya city"
+- "turkish taxi"

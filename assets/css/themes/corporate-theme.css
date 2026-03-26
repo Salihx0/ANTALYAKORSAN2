@@ -1,0 +1,562 @@
+/**
+ * CORPORATE THEME - ANA TEMA
+ * Antalya Korsan Taksi
+ * 
+ * Renk Paleti:
+ * - Primary: Altın Sarısı (#FFD700) - Taksi rengi
+ * - Secondary: Koyu Gri (#1A1A1A) - Profesyonel
+ * - Accent: Turuncu (#FF6B00) - Enerji
+ * 
+ * @package AntalyaKorsanTaksi
+ * @version 1.0
+ * @date 18 Kasım 2025
+ * @author Burak KAYA
+ */
+
+/* ============================================
+   CORPORATE THEME VARIABLES
+   ============================================ */
+body[data-theme="corporate"],
+body:not([data-theme]) {
+    /* Ana Renkler */
+    --primary-color: #FFD700;
+    --primary-dark: #FFC700;
+    --primary-light: #FFE44D;
+    --secondary-color: #1A1A1A;
+    --secondary-dark: #000000;
+    --secondary-light: #2D2D2D;
+    
+    /* Accent Renkler */
+    --accent-color: #FF6B00;
+    --accent-dark: #E65100;
+    --accent-light: #FF8F00;
+    
+    /* Background */
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #F8F9FA;
+    --bg-dark: #1A1A1A;
+    
+    /* Text Colors */
+    --text-primary: #1A1A1A;
+    --text-secondary: #6C757D;
+    --text-light: #FFFFFF;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #FFD700 0%, #FF6B00 100%);
+    --gradient-secondary: linear-gradient(135deg, #1A1A1A 0%, #000000 100%);
+    --gradient-overlay: linear-gradient(135deg, rgba(26, 26, 26, 0.9) 0%, rgba(26, 26, 26, 0.7) 100%);
+    
+    /* Shadows */
+    --shadow-primary: 0 4px 20px rgba(255, 215, 0, 0.3);
+    --shadow-secondary: 0 4px 20px rgba(0, 0, 0, 0.2);
+    --shadow-accent: 0 4px 20px rgba(255, 107, 0, 0.3);
+}
+
+/* ============================================
+   HEADER - CORPORATE THEME
+   ============================================ */
+body[data-theme="corporate"] .site-header,
+body:not([data-theme]) .site-header {
+    background-color: rgba(26, 26, 26, 0.95);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+body[data-theme="corporate"] .site-header.scrolled,
+body:not([data-theme]) .site-header.scrolled {
+    background-color: rgba(26, 26, 26, 0.98);
+    box-shadow: 0 4px 20px rgba(255, 215, 0, 0.2);
+}
+
+body[data-theme="corporate"] .site-logo,
+body:not([data-theme]) .site-logo {
+    color: var(--primary-color);
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+body[data-theme="corporate"] .nav-menu a,
+body:not([data-theme]) .nav-menu a {
+    color: var(--text-light);
+    position: relative;
+}
+
+body[data-theme="corporate"] .nav-menu a::before,
+body:not([data-theme]) .nav-menu a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-primary);
+    opacity: 0;
+    border-radius: 8px;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+body[data-theme="corporate"] .nav-menu a:hover::before,
+body:not([data-theme]) .nav-menu a:hover::before {
+    opacity: 0.1;
+}
+
+body[data-theme="corporate"] .nav-menu a:hover,
+body[data-theme="corporate"] .nav-menu a.active,
+body:not([data-theme]) .nav-menu a:hover,
+body:not([data-theme]) .nav-menu a.active {
+    color: var(--primary-color);
+}
+
+/* ============================================
+   HERO SECTION - CORPORATE THEME
+   ============================================ */
+body[data-theme="corporate"] .hero-section,
+body:not([data-theme]) .hero-section {
+    background: var(--gradient-secondary);
+}
+
+body[data-theme="corporate"] .hero-overlay,
+body:not([data-theme]) .hero-overlay {
+    background: var(--gradient-overlay);
+}
+
+body[data-theme="corporate"] .hero-title-main,
+body:not([data-theme]) .hero-title-main {
+    color: var(--primary-color);
+    text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 20px rgba(255, 215, 0, 0.5),
+                     0 0 30px rgba(255, 215, 0, 0.3);
+    }
+    to {
+        text-shadow: 0 0 30px rgba(255, 215, 0, 0.8),
+                     0 0 40px rgba(255, 215, 0, 0.5),
+                     0 0 50px rgba(255, 215, 0, 0.3);
+    }
+}
+
+body[data-theme="corporate"] .hero-title-sub,
+body:not([data-theme]) .hero-title-sub {
+    color: var(--text-light);
+}
+
+body[data-theme="corporate"] .hero-feature i,
+body:not([data-theme]) .hero-feature i {
+    color: var(--primary-color);
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+}
+
+/* ============================================
+   BUTTONS - CORPORATE THEME
+   ============================================ */
+body[data-theme="corporate"] .btn-primary,
+body:not([data-theme]) .btn-primary {
+    background: var(--gradient-primary);
+    color: var(--secondary-color);
+    box-shadow: var(--shadow-primary);
+    position: relative;
+    overflow: hidden;
+}
+
+body[data-theme="corporate"] .btn-primary::before,
+body:not([data-theme]) .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+body[data-theme="corporate"] .btn-primary:hover::before,
+body:not([data-theme]) .btn-primary:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+body[data-theme="corporate"] .btn-primary:hover,
+body:not([data-theme]) .btn-primary:hover {
+    box-shadow: 0 6px 30px rgba(255, 215, 0, 0.5);
+    transform: translateY(-3px);
+}
+
+body[data-theme="corporate"] .btn-outline,
+body:not([data-theme]) .btn-outline {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+body[data-theme="corporate"] .btn-outline:hover,
+body:not([data-theme]) .btn-outline:hover {
+    background: var(--gradient-primary);
+    color: var(--secondary-color);
+    border-color: transparent;
+}
+
+/* ============================================
+   SERVICES SECTION - CORPORATE THEME
+   ============================================ */
+body[data-theme="corporate"] .service-card,
+body:not([data-theme]) .service-card {
+    background: var(--bg-primary);
+    border: 1px solid rgba(255, 215, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+body[data-theme="corporate"] .service-card:hover,
+body:not([data-theme]) .service-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-primary);
+    transform: translateY(-10px) scale(1.02);
+}
+
+body[data-theme="corporate"] .service-icon,
+body:not([data-theme]) .service-icon {
+    background: var(--gradient-primary);
+    box-shadow: var(--shadow-primary);
+}
+
+body[data-theme="corporate"] .service-card:hover .service-icon,
+body:not([data-theme]) .service-card:hover .service-icon {
+    animation: iconBounce 0.6s ease;
+}
+
+@keyframes iconBounce {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    25% { transform: scale(1.1) rotate(-5deg); }
+    50% { transform: scale(1.15) rotate(5deg); }
+    75% { transform: scale(1.1) rotate(-5deg); }
+}
+
+body[data-theme="corporate"] .service-link,
+body:not([data-theme]) .service-link {
+    color: var(--accent-color);
+}
+
+body[data-theme="corporate"] .service-link:hover,
+body:not([data-theme]) .service-link:hover {
+    color: var(--accent-dark);
+}
+
+/* ============================================
+   WHY US SECTION - CORPORATE THEME
+   ============================================ */
+body[data-theme="corporate"] .feature-item,
+body:not([data-theme]) .feature-item {
+    background: var(--bg-primary);
+    border-left: 4px solid var(--primary-color);
+}
+
+body[data-theme="corporate"] .feature-item:hover,
+body:not([data-theme]) .feature-item:hover {
+    box-shadow: var(--shadow-primary);
+    border-left-width: 6px;
+}
+
+body[data-theme="corporate"] .feature-icon,
+body:not([data-theme]) .feature-icon {
+    background: var(--gradient-primary);
+}
+
+/* ============================================
+   CTA SECTION - CORPORATE THEME
+   ============================================ */
+body[data-theme="corporate"] .cta-section,
+body:not([data-theme]) .cta-section {
+    background: var(--gradient-secondary);
+    position: relative;
+}
+
+body[data-theme="corporate"] .cta-section::before,
+body:not([data-theme]) .cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(255, 107, 0, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+body[data-theme="corporate"] .cta-title,
+body:not([data-theme]) .cta-title {
+    color: var(--text-light);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+body[data-theme="corporate"] .btn-pulse,
+body:not([data-theme]) .btn-pulse {
+    animation: pulse 2s infinite, glow 2s ease-in-out infinite alternate;
+}
+
+/* ============================================
+   BLOG SECTION - CORPORATE THEME
+   ============================================ */
+body[data-theme="corporate"] .blog-card,
+body:not([data-theme]) .blog-card {
+    background: var(--bg-primary);
+    border: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+body[data-theme="corporate"] .blog-card:hover,
+body:not([data-theme]) .blog-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-primary);
+}
+
+body[data-theme="corporate"] .blog-category,
+body:not([data-theme]) .blog-category {
+    background: var(--gradient-primary);
+    color: var(--secondary-color);
+    box-shadow: var(--shadow-primary);
+}
+
+body[data-theme="corporate"] .blog-link,
+body:not([data-theme]) .blog-link {
+    color: var(--accent-color);
+}
+
+/* ============================================
+   FOOTER - CORPORATE THEME
+   ============================================ */
+body[data-theme="corporate"] .site-footer,
+body:not([data-theme]) .site-footer {
+    background: var(--gradient-secondary);
+    border-top: 3px solid var(--primary-color);
+}
+
+body[data-theme="corporate"] .footer-column h3,
+body:not([data-theme]) .footer-column h3 {
+    color: var(--primary-color);
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+body[data-theme="corporate"] .social-link,
+body:not([data-theme]) .social-link {
+    background: rgba(255, 215, 0, 0.1);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+body[data-theme="corporate"] .social-link:hover,
+body:not([data-theme]) .social-link:hover {
+    background: var(--gradient-primary);
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-primary);
+}
+
+body[data-theme="corporate"] .developer-credit,
+body:not([data-theme]) .developer-credit {
+    background: var(--gradient-primary);
+    color: var(--secondary-color);
+    box-shadow: var(--shadow-primary);
+}
+
+body[data-theme="corporate"] .developer-credit:hover,
+body:not([data-theme]) .developer-credit:hover {
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+    animation: developerPulse 0.6s ease;
+}
+
+@keyframes developerPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* ============================================
+   WHATSAPP WIDGET - CORPORATE THEME
+   ============================================ */
+body[data-theme="corporate"] .whatsapp-float,
+body:not([data-theme]) .whatsapp-float {
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+}
+
+body[data-theme="corporate"] .whatsapp-float:hover,
+body:not([data-theme]) .whatsapp-float:hover {
+    box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+}
+
+/* ============================================
+   SCROLL TO TOP - CORPORATE THEME
+   ============================================ */
+body[data-theme="corporate"] .scroll-to-top,
+body:not([data-theme]) .scroll-to-top {
+    background: var(--gradient-primary);
+    box-shadow: var(--shadow-primary);
+}
+
+body[data-theme="corporate"] .scroll-to-top:hover,
+body:not([data-theme]) .scroll-to-top:hover {
+    box-shadow: 0 6px 30px rgba(255, 215, 0, 0.5);
+}
+
+/* ============================================
+   FORMS - CORPORATE THEME
+   ============================================ */
+body[data-theme="corporate"] .form-control:focus,
+body:not([data-theme]) .form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1);
+}
+
+body[data-theme="corporate"] .form-control.error,
+body:not([data-theme]) .form-control.error {
+    border-color: #DC3545;
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+}
+
+/* ============================================
+   SECTION BACKGROUNDS - CORPORATE THEME
+   ============================================ */
+body[data-theme="corporate"] .bg-light,
+body:not([data-theme]) .bg-light {
+    background: linear-gradient(180deg, #F8F9FA 0%, #FFFFFF 100%);
+}
+
+body[data-theme="corporate"] .section-subtitle,
+body:not([data-theme]) .section-subtitle {
+    color: var(--accent-color);
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ============================================
+   ANIMATIONS - CORPORATE THEME
+   ============================================ */
+body[data-theme="corporate"] .animate-fadeInUp,
+body:not([data-theme]) .animate-fadeInUp {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Hover Effects */
+body[data-theme="corporate"] a:not(.btn),
+body:not([data-theme]) a:not(.btn) {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+body[data-theme="corporate"] a:not(.btn)::after,
+body:not([data-theme]) a:not(.btn)::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gradient-primary);
+    transition: width 0.3s ease;
+}
+
+body[data-theme="corporate"] a:not(.btn):hover::after,
+body:not([data-theme]) a:not(.btn):hover::after {
+    width: 100%;
+}
+
+/* ============================================
+   LOADING STATES - CORPORATE THEME
+   ============================================ */
+body[data-theme="corporate"] .spinner,
+body:not([data-theme]) .spinner {
+    border-color: rgba(255, 215, 0, 0.2);
+    border-top-color: var(--primary-color);
+}
+
+/* ============================================
+   SELECTION - CORPORATE THEME
+   ============================================ */
+body[data-theme="corporate"] ::selection,
+body:not([data-theme]) ::selection {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+/* ============================================
+   SCROLLBAR - CORPORATE THEME
+   ============================================ */
+body[data-theme="corporate"] ::-webkit-scrollbar-thumb,
+body:not([data-theme]) ::-webkit-scrollbar-thumb {
+    background: var(--gradient-primary);
+}
+
+body[data-theme="corporate"] ::-webkit-scrollbar-thumb:hover,
+body:not([data-theme]) ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #FFC700 0%, #E65100 100%);
+}
+
+/* ============================================
+   PREMIUM EFFECTS - CORPORATE THEME
+   ============================================ */
+
+/* Shine Effect */
+body[data-theme="corporate"] .btn-primary::after,
+body:not([data-theme]) .btn-primary::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.3) 50%,
+        transparent 70%
+    );
+    transform: rotate(45deg);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+/* Floating Animation */
+body[data-theme="corporate"] .hero-feature,
+body:not([data-theme]) .hero-feature {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS - CORPORATE THEME
+   ============================================ */
+@media (max-width: 768px) {
+    body[data-theme="corporate"] .hero-title-main,
+    body:not([data-theme]) .hero-title-main {
+        text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    }
+    
+    body[data-theme="corporate"] .service-card:hover,
+    body:not([data-theme]) .service-card:hover {
+        transform: translateY(-5px) scale(1.01);
+    }
+}
+
+/* ============================================
+   PRINT STYLES - CORPORATE THEME
+   ============================================ */
+@media print {
+    body[data-theme="corporate"],
+    body:not([data-theme]) {
+        --primary-color: #000000;
+        --secondary-color: #000000;
+        --accent-color: #666666;
+    }
+}

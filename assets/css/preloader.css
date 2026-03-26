@@ -1,0 +1,641 @@
+/**
+ * PRELOADER ANIMATIONS
+ * Antalya Korsan Taksi - Logo ile Yükleme Animasyonu
+ * 
+ * @package AntalyaKorsanTaksi
+ * @version 1.0
+ * @date 18 Kasım 2025
+ * @author Burak KAYA
+ */
+
+/* ============================================
+   PRELOADER CONTAINER
+   ============================================ */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1A1A1A 0%, #000000 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.preloader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* ============================================
+   PRELOADER CONTENT
+   ============================================ */
+.preloader-content {
+    text-align: center;
+    position: relative;
+}
+
+/* ============================================
+   LOGO ANIMATION
+   ============================================ */
+.preloader-logo {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 2rem;
+    position: relative;
+    animation: logoFloat 3s ease-in-out infinite;
+}
+
+.preloader-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.6));
+    animation: logoGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes logoFloat {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-10px) rotate(-2deg);
+    }
+    50% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    75% {
+        transform: translateY(-10px) rotate(2deg);
+    }
+}
+
+@keyframes logoGlow {
+    from {
+        filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.6));
+    }
+    to {
+        filter: drop-shadow(0 0 40px rgba(255, 215, 0, 1))
+                drop-shadow(0 0 60px rgba(255, 215, 0, 0.8));
+    }
+}
+
+/* ============================================
+   TAXI WHEEL ANIMATION
+   ============================================ */
+.preloader-wheel {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+}
+
+.preloader-wheel::before {
+    content: '🚕';
+    font-size: 40px;
+    display: block;
+    animation: wheelSpin 1s linear infinite;
+}
+
+@keyframes wheelSpin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ============================================
+   LOADING TEXT
+   ============================================ */
+.preloader-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #FFD700;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    animation: textPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes textPulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(1.05);
+    }
+}
+
+/* ============================================
+   LOADING DOTS
+   ============================================ */
+.preloader-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.preloader-dot {
+    width: 12px;
+    height: 12px;
+    background: linear-gradient(135deg, #FFD700, #FF6B00);
+    border-radius: 50%;
+    animation: dotBounce 1.4s ease-in-out infinite;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.preloader-dot:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.preloader-dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.preloader-dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes dotBounce {
+    0%, 80%, 100% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+    40% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+/* ============================================
+   PROGRESS BAR
+   ============================================ */
+.preloader-progress {
+    width: 300px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+}
+
+.preloader-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #FFD700, #FF6B00, #FFD700);
+    background-size: 200% 100%;
+    border-radius: 10px;
+    animation: progressMove 2s linear infinite;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+}
+
+@keyframes progressMove {
+    0% {
+        width: 0%;
+        background-position: 0% 50%;
+    }
+    50% {
+        width: 70%;
+        background-position: 100% 50%;
+    }
+    100% {
+        width: 100%;
+        background-position: 0% 50%;
+    }
+}
+
+/* ============================================
+   PERCENTAGE TEXT
+   ============================================ */
+.preloader-percentage {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #FFD700;
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+/* ============================================
+   CIRCULAR LOADER (Alternative)
+   ============================================ */
+.preloader-circle {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 2rem;
+    position: relative;
+}
+
+.preloader-circle-inner {
+    width: 100%;
+    height: 100%;
+    border: 4px solid rgba(255, 215, 0, 0.2);
+    border-top-color: #FFD700;
+    border-radius: 50%;
+    animation: circleRotate 1s linear infinite;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+@keyframes circleRotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ============================================
+   TAXI ANIMATION
+   ============================================ */
+.preloader-taxi {
+    position: absolute;
+    bottom: 50px;
+    left: -100px;
+    font-size: 3rem;
+    animation: taxiDrive 4s linear infinite;
+}
+
+@keyframes taxiDrive {
+    0% {
+        left: -100px;
+        transform: scaleX(1);
+    }
+    48% {
+        left: calc(100% + 100px);
+        transform: scaleX(1);
+    }
+    50% {
+        left: calc(100% + 100px);
+        transform: scaleX(-1);
+    }
+    98% {
+        left: -100px;
+        transform: scaleX(-1);
+    }
+    100% {
+        left: -100px;
+        transform: scaleX(1);
+    }
+}
+
+/* ============================================
+   PARTICLES BACKGROUND
+   ============================================ */
+.preloader-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.preloader-particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #FFD700;
+    border-radius: 50%;
+    opacity: 0;
+    animation: particleFloat 3s ease-in-out infinite;
+}
+
+.preloader-particle:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.preloader-particle:nth-child(2) {
+    left: 30%;
+    animation-delay: 0.5s;
+}
+
+.preloader-particle:nth-child(3) {
+    left: 50%;
+    animation-delay: 1s;
+}
+
+.preloader-particle:nth-child(4) {
+    left: 70%;
+    animation-delay: 1.5s;
+}
+
+.preloader-particle:nth-child(5) {
+    left: 90%;
+    animation-delay: 2s;
+}
+
+@keyframes particleFloat {
+    0% {
+        bottom: 0;
+        opacity: 0;
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        bottom: 100%;
+        opacity: 0;
+        transform: translateY(-20px) scale(0.5);
+    }
+}
+
+/* ============================================
+   RIPPLE EFFECT
+   ============================================ */
+.preloader-ripple {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+}
+
+.preloader-ripple-circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #FFD700;
+    border-radius: 50%;
+    opacity: 0;
+    animation: rippleExpand 2s ease-out infinite;
+}
+
+.preloader-ripple-circle:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.preloader-ripple-circle:nth-child(3) {
+    animation-delay: 1s;
+}
+
+@keyframes rippleExpand {
+    0% {
+        transform: scale(0.5);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+/* ============================================
+   THEME VARIATIONS
+   ============================================ */
+
+/* Corporate Theme */
+body[data-theme="corporate"] .preloader,
+body:not([data-theme]) .preloader {
+    background: linear-gradient(135deg, #1A1A1A 0%, #000000 100%);
+}
+
+body[data-theme="corporate"] .preloader-text,
+body:not([data-theme]) .preloader-text {
+    color: #FFD700;
+}
+
+/* Dark Theme */
+body[data-theme="dark"] .preloader {
+    background: linear-gradient(135deg, #000000 0%, #1A0000 100%);
+}
+
+body[data-theme="dark"] .preloader-text {
+    color: #FF0000;
+}
+
+body[data-theme="dark"] .preloader-logo img {
+    filter: drop-shadow(0 0 20px rgba(255, 0, 0, 0.6));
+}
+
+body[data-theme="dark"] .preloader-dot {
+    background: linear-gradient(135deg, #FF0000, #8B0000);
+}
+
+body[data-theme="dark"] .preloader-progress-bar {
+    background: linear-gradient(90deg, #FF0000, #8B0000, #FF0000);
+}
+
+/* Light Theme */
+body[data-theme="light"] .preloader {
+    background: linear-gradient(135deg, #FFFFFF 0%, #F8F9FA 100%);
+}
+
+body[data-theme="light"] .preloader-text {
+    color: #007BFF;
+}
+
+body[data-theme="light"] .preloader-logo img {
+    filter: drop-shadow(0 0 20px rgba(0, 123, 255, 0.6));
+}
+
+body[data-theme="light"] .preloader-dot {
+    background: linear-gradient(135deg, #007BFF, #FFA500);
+}
+
+body[data-theme="light"] .preloader-progress-bar {
+    background: linear-gradient(90deg, #007BFF, #FFA500, #007BFF);
+}
+
+/* ============================================
+   LOADING MESSAGES
+   ============================================ */
+.preloader-message {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: rgba(255, 215, 0, 0.7);
+    font-style: italic;
+    animation: messageFade 3s ease-in-out infinite;
+}
+
+@keyframes messageFade {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* ============================================
+   SPINNER VARIATIONS
+   ============================================ */
+
+/* Dual Ring Spinner */
+.preloader-dual-ring {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 2rem;
+}
+
+.preloader-dual-ring::after {
+    content: '';
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #FFD700;
+    border-color: #FFD700 transparent #FFD700 transparent;
+    animation: dualRing 1.2s linear infinite;
+}
+
+@keyframes dualRing {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Ellipsis Spinner */
+.preloader-ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 2rem;
+}
+
+.preloader-ellipsis div {
+    position: absolute;
+    top: 33px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #FFD700;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.preloader-ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: ellipsis1 0.6s infinite;
+}
+
+.preloader-ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: ellipsis2 0.6s infinite;
+}
+
+.preloader-ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: ellipsis2 0.6s infinite;
+}
+
+.preloader-ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: ellipsis3 0.6s infinite;
+}
+
+@keyframes ellipsis1 {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes ellipsis2 {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(24px, 0);
+    }
+}
+
+@keyframes ellipsis3 {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 768px) {
+    .preloader-logo {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .preloader-text {
+        font-size: 1.25rem;
+    }
+    
+    .preloader-progress {
+        width: 250px;
+    }
+    
+    .preloader-taxi {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .preloader-logo {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .preloader-text {
+        font-size: 1rem;
+    }
+    
+    .preloader-progress {
+        width: 200px;
+    }
+    
+    .preloader-dots {
+        gap: 0.3rem;
+    }
+    
+    .preloader-dot {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+    .preloader-logo,
+    .preloader-text,
+    .preloader-dot,
+    .preloader-progress-bar,
+    .preloader-circle-inner,
+    .preloader-taxi,
+    .preloader-particle,
+    .preloader-ripple-circle {
+        animation: none;
+    }
+    
+    .preloader-logo img {
+        filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.6));
+    }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+@media print {
+    .preloader {
+        display: none !important;
+    }
+}

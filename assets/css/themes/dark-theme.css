@@ -1,0 +1,662 @@
+/**
+ * DARK THEME - KARANLIK TEMA
+ * Antalya Korsan Taksi
+ * 
+ * Renk Paleti:
+ * - Primary: Kırmızı (#FF0000) - Güçlü ve dikkat çekici
+ * - Secondary: Siyah (#000000) - Karanlık ve gizemli
+ * - Accent: Koyu Kırmızı (#8B0000) - Derinlik
+ * 
+ * @package AntalyaKorsanTaksi
+ * @version 1.0
+ * @date 18 Kasım 2025
+ * @author Burak KAYA
+ */
+
+/* ============================================
+   DARK THEME VARIABLES
+   ============================================ */
+body[data-theme="dark"] {
+    /* Ana Renkler */
+    --primary-color: #FF0000;
+    --primary-dark: #CC0000;
+    --primary-light: #FF3333;
+    --secondary-color: #000000;
+    --secondary-dark: #000000;
+    --secondary-light: #1A1A1A;
+    
+    /* Accent Renkler */
+    --accent-color: #8B0000;
+    --accent-dark: #660000;
+    --accent-light: #A00000;
+    
+    /* Background */
+    --bg-primary: #0A0A0A;
+    --bg-secondary: #1A1A1A;
+    --bg-dark: #000000;
+    
+    /* Text Colors */
+    --text-primary: #FFFFFF;
+    --text-secondary: #B0B0B0;
+    --text-light: #FFFFFF;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #FF0000 0%, #8B0000 100%);
+    --gradient-secondary: linear-gradient(135deg, #1A1A1A 0%, #000000 100%);
+    --gradient-overlay: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.8) 100%);
+    
+    /* Shadows */
+    --shadow-primary: 0 4px 20px rgba(255, 0, 0, 0.4);
+    --shadow-secondary: 0 4px 20px rgba(0, 0, 0, 0.8);
+    --shadow-accent: 0 4px 20px rgba(139, 0, 0, 0.4);
+    
+    /* Borders */
+    --border-color: rgba(255, 0, 0, 0.2);
+}
+
+/* ============================================
+   BODY - DARK THEME
+   ============================================ */
+body[data-theme="dark"] {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+/* ============================================
+   HEADER - DARK THEME
+   ============================================ */
+body[data-theme="dark"] .site-header {
+    background-color: rgba(0, 0, 0, 0.98);
+    border-bottom: 2px solid var(--primary-color);
+    box-shadow: 0 4px 20px rgba(255, 0, 0, 0.3);
+}
+
+body[data-theme="dark"] .site-header.scrolled {
+    background-color: rgba(0, 0, 0, 1);
+    box-shadow: 0 4px 30px rgba(255, 0, 0, 0.4);
+}
+
+body[data-theme="dark"] .site-logo {
+    color: var(--primary-color);
+    text-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+}
+
+body[data-theme="dark"] .nav-menu a {
+    color: var(--text-light);
+}
+
+body[data-theme="dark"] .nav-menu a:hover,
+body[data-theme="dark"] .nav-menu a.active {
+    color: var(--primary-color);
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+body[data-theme="dark"] .nav-menu a::after {
+    background-color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+}
+
+/* ============================================
+   HERO SECTION - DARK THEME
+   ============================================ */
+body[data-theme="dark"] .hero-section {
+    background: var(--bg-dark);
+}
+
+body[data-theme="dark"] .hero-overlay {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(26, 0, 0, 0.9) 100%);
+}
+
+body[data-theme="dark"] .hero-title-main {
+    color: var(--primary-color);
+    text-shadow: 0 0 40px rgba(255, 0, 0, 0.8),
+                 0 0 60px rgba(255, 0, 0, 0.5);
+    animation: redGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes redGlow {
+    from {
+        text-shadow: 0 0 30px rgba(255, 0, 0, 0.6),
+                     0 0 40px rgba(255, 0, 0, 0.4);
+    }
+    to {
+        text-shadow: 0 0 50px rgba(255, 0, 0, 1),
+                     0 0 70px rgba(255, 0, 0, 0.7),
+                     0 0 90px rgba(255, 0, 0, 0.5);
+    }
+}
+
+body[data-theme="dark"] .hero-title-sub {
+    color: var(--text-light);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+body[data-theme="dark"] .hero-description {
+    color: var(--text-secondary);
+}
+
+body[data-theme="dark"] .hero-feature i {
+    color: var(--primary-color);
+    filter: drop-shadow(0 0 15px rgba(255, 0, 0, 0.8));
+}
+
+body[data-theme="dark"] .scroll-mouse {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+body[data-theme="dark"] .scroll-wheel {
+    background-color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+}
+
+/* ============================================
+   BUTTONS - DARK THEME
+   ============================================ */
+body[data-theme="dark"] .btn-primary {
+    background: var(--gradient-primary);
+    color: var(--text-light);
+    box-shadow: var(--shadow-primary);
+    border: 1px solid var(--primary-color);
+}
+
+body[data-theme="dark"] .btn-primary:hover {
+    box-shadow: 0 6px 40px rgba(255, 0, 0, 0.6);
+    transform: translateY(-3px);
+    border-color: var(--primary-light);
+}
+
+body[data-theme="dark"] .btn-outline {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    background: transparent;
+}
+
+body[data-theme="dark"] .btn-outline:hover {
+    background: var(--gradient-primary);
+    color: var(--text-light);
+    box-shadow: var(--shadow-primary);
+}
+
+/* ============================================
+   SECTIONS - DARK THEME
+   ============================================ */
+body[data-theme="dark"] .section-padding {
+    background-color: var(--bg-primary);
+}
+
+body[data-theme="dark"] .bg-light {
+    background: linear-gradient(180deg, #1A1A1A 0%, #0A0A0A 100%);
+}
+
+body[data-theme="dark"] .section-title {
+    color: var(--text-light);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+body[data-theme="dark"] .section-subtitle {
+    color: var(--primary-color);
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+body[data-theme="dark"] .section-description {
+    color: var(--text-secondary);
+}
+
+/* ============================================
+   SERVICES SECTION - DARK THEME
+   ============================================ */
+body[data-theme="dark"] .service-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+body[data-theme="dark"] .service-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-primary);
+    background: linear-gradient(135deg, #1A1A1A 0%, #0A0A0A 100%);
+}
+
+body[data-theme="dark"] .service-icon {
+    background: var(--gradient-primary);
+    box-shadow: var(--shadow-primary);
+}
+
+body[data-theme="dark"] .service-title {
+    color: var(--text-light);
+}
+
+body[data-theme="dark"] .service-description {
+    color: var(--text-secondary);
+}
+
+body[data-theme="dark"] .service-link {
+    color: var(--primary-color);
+}
+
+body[data-theme="dark"] .service-link:hover {
+    color: var(--primary-light);
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+/* ============================================
+   WHY US SECTION - DARK THEME
+   ============================================ */
+body[data-theme="dark"] .why-us-image {
+    border: 2px solid var(--border-color);
+    box-shadow: var(--shadow-primary);
+}
+
+body[data-theme="dark"] .feature-item {
+    background: var(--bg-secondary);
+    border-left: 4px solid var(--primary-color);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+body[data-theme="dark"] .feature-item:hover {
+    box-shadow: var(--shadow-primary);
+    background: linear-gradient(135deg, #1A1A1A 0%, #0A0A0A 100%);
+}
+
+body[data-theme="dark"] .feature-icon {
+    background: var(--gradient-primary);
+}
+
+body[data-theme="dark"] .feature-content h3 {
+    color: var(--text-light);
+}
+
+body[data-theme="dark"] .feature-content p {
+    color: var(--text-secondary);
+}
+
+/* ============================================
+   CTA SECTION - DARK THEME
+   ============================================ */
+body[data-theme="dark"] .cta-section {
+    background: var(--gradient-secondary);
+    border-top: 2px solid var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+body[data-theme="dark"] .cta-section::before {
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(255, 0, 0, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(139, 0, 0, 0.15) 0%, transparent 50%);
+}
+
+body[data-theme="dark"] .cta-title {
+    color: var(--text-light);
+    text-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+}
+
+body[data-theme="dark"] .cta-description {
+    color: var(--text-secondary);
+}
+
+body[data-theme="dark"] .cta-info {
+    color: var(--text-secondary);
+}
+
+body[data-theme="dark"] .cta-info a {
+    color: var(--primary-color);
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+/* ============================================
+   BLOG SECTION - DARK THEME
+   ============================================ */
+body[data-theme="dark"] .blog-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+body[data-theme="dark"] .blog-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-primary);
+}
+
+body[data-theme="dark"] .blog-category {
+    background: var(--gradient-primary);
+    color: var(--text-light);
+    box-shadow: var(--shadow-primary);
+}
+
+body[data-theme="dark"] .blog-title {
+    color: var(--text-light);
+}
+
+body[data-theme="dark"] .blog-title a {
+    color: var(--text-light);
+}
+
+body[data-theme="dark"] .blog-title a:hover {
+    color: var(--primary-color);
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+body[data-theme="dark"] .blog-excerpt {
+    color: var(--text-secondary);
+}
+
+body[data-theme="dark"] .blog-meta {
+    color: var(--text-secondary);
+}
+
+body[data-theme="dark"] .blog-link {
+    color: var(--primary-color);
+}
+
+body[data-theme="dark"] .blog-link:hover {
+    color: var(--primary-light);
+}
+
+/* ============================================
+   FOOTER - DARK THEME
+   ============================================ */
+body[data-theme="dark"] .site-footer {
+    background: var(--gradient-secondary);
+    border-top: 3px solid var(--primary-color);
+    box-shadow: 0 -4px 20px rgba(255, 0, 0, 0.3);
+}
+
+body[data-theme="dark"] .footer-column h3 {
+    color: var(--primary-color);
+    text-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+}
+
+body[data-theme="dark"] .footer-column p,
+body[data-theme="dark"] .footer-column a {
+    color: var(--text-secondary);
+}
+
+body[data-theme="dark"] .footer-column a:hover {
+    color: var(--primary-color);
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+body[data-theme="dark"] .social-link {
+    background: rgba(255, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
+}
+
+body[data-theme="dark"] .social-link:hover {
+    background: var(--gradient-primary);
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-primary);
+}
+
+body[data-theme="dark"] .footer-bottom {
+    border-top-color: var(--border-color);
+    color: var(--text-secondary);
+}
+
+body[data-theme="dark"] .developer-credit {
+    background: var(--gradient-primary);
+    color: var(--text-light);
+    box-shadow: var(--shadow-primary);
+    border: 1px solid var(--primary-color);
+}
+
+body[data-theme="dark"] .developer-credit:hover {
+    box-shadow: 0 0 40px rgba(255, 0, 0, 0.8);
+}
+
+/* ============================================
+   FORMS - DARK THEME
+   ============================================ */
+body[data-theme="dark"] .form-control {
+    background-color: var(--bg-secondary);
+    border-color: var(--border-color);
+    color: var(--text-light);
+}
+
+body[data-theme="dark"] .form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.2);
+    background-color: var(--bg-primary);
+}
+
+body[data-theme="dark"] .form-control::placeholder {
+    color: var(--text-secondary);
+}
+
+body[data-theme="dark"] .form-label {
+    color: var(--text-light);
+}
+
+/* ============================================
+   CARDS - DARK THEME
+   ============================================ */
+body[data-theme="dark"] .card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+body[data-theme="dark"] .card:hover {
+    box-shadow: var(--shadow-primary);
+}
+
+body[data-theme="dark"] .card-header {
+    border-bottom-color: var(--border-color);
+    background-color: var(--bg-primary);
+}
+
+body[data-theme="dark"] .card-footer {
+    border-top-color: var(--border-color);
+    background-color: var(--bg-primary);
+}
+
+/* ============================================
+   WHATSAPP WIDGET - DARK THEME
+   ============================================ */
+body[data-theme="dark"] .whatsapp-float {
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    box-shadow: 0 4px 30px rgba(37, 211, 102, 0.5);
+    border: 2px solid #25D366;
+}
+
+body[data-theme="dark"] .whatsapp-float:hover {
+    box-shadow: 0 6px 40px rgba(37, 211, 102, 0.7);
+}
+
+/* ============================================
+   SCROLL TO TOP - DARK THEME
+   ============================================ */
+body[data-theme="dark"] .scroll-to-top {
+    background: var(--gradient-primary);
+    box-shadow: var(--shadow-primary);
+    border: 1px solid var(--primary-color);
+}
+
+body[data-theme="dark"] .scroll-to-top:hover {
+    box-shadow: 0 6px 40px rgba(255, 0, 0, 0.7);
+}
+
+/* ============================================
+   THEME SWITCHER - DARK THEME
+   ============================================ */
+body[data-theme="dark"] .theme-switcher {
+    background-color: rgba(255, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
+}
+
+body[data-theme="dark"] .theme-btn.active {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+/* ============================================
+   SELECTION - DARK THEME
+   ============================================ */
+body[data-theme="dark"] ::selection {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+}
+
+/* ============================================
+   SCROLLBAR - DARK THEME
+   ============================================ */
+body[data-theme="dark"] ::-webkit-scrollbar {
+    background-color: var(--bg-primary);
+}
+
+body[data-theme="dark"] ::-webkit-scrollbar-track {
+    background-color: var(--bg-secondary);
+}
+
+body[data-theme="dark"] ::-webkit-scrollbar-thumb {
+    background: var(--gradient-primary);
+    border: 2px solid var(--bg-primary);
+}
+
+body[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #FF3333 0%, #A00000 100%);
+}
+
+/* ============================================
+   LOADING STATES - DARK THEME
+   ============================================ */
+body[data-theme="dark"] .spinner {
+    border-color: rgba(255, 0, 0, 0.2);
+    border-top-color: var(--primary-color);
+}
+
+/* ============================================
+   PREMIUM EFFECTS - DARK THEME
+   ============================================ */
+
+/* Neon Glow Effect */
+body[data-theme="dark"] .btn-primary {
+    animation: neonPulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes neonPulse {
+    from {
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.4),
+                    0 0 20px rgba(255, 0, 0, 0.3),
+                    0 0 30px rgba(255, 0, 0, 0.2);
+    }
+    to {
+        box-shadow: 0 0 20px rgba(255, 0, 0, 0.6),
+                    0 0 30px rgba(255, 0, 0, 0.5),
+                    0 0 40px rgba(255, 0, 0, 0.4);
+    }
+}
+
+/* Blood Drip Effect */
+body[data-theme="dark"] .hero-title-main::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 20px;
+    background: linear-gradient(180deg, var(--primary-color) 0%, transparent 100%);
+    animation: drip 3s ease-in-out infinite;
+}
+
+@keyframes drip {
+    0%, 100% { height: 0; opacity: 0; }
+    50% { height: 20px; opacity: 1; }
+}
+
+/* Smoke Effect */
+body[data-theme="dark"] .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(255, 0, 0, 0.05) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+body[data-theme="dark"] .service-card:hover::before {
+    opacity: 1;
+}
+
+/* Glitch Effect */
+body[data-theme="dark"] .hero-title-main {
+    position: relative;
+}
+
+body[data-theme="dark"] .hero-title-main::before,
+body[data-theme="dark"] .hero-title-main::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body[data-theme="dark"] .hero-title-main::before {
+    left: 2px;
+    text-shadow: -2px 0 var(--primary-color);
+    clip: rect(24px, 550px, 90px, 0);
+    animation: glitch-anim 3s infinite linear alternate-reverse;
+}
+
+body[data-theme="dark"] .hero-title-main::after {
+    left: -2px;
+    text-shadow: -2px 0 var(--accent-color);
+    clip: rect(85px, 550px, 140px, 0);
+    animation: glitch-anim 2s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+    0% { clip: rect(61px, 9999px, 90px, 0); }
+    20% { clip: rect(84px, 9999px, 12px, 0); }
+    40% { clip: rect(40px, 9999px, 66px, 0); }
+    60% { clip: rect(96px, 9999px, 8px, 0); }
+    80% { clip: rect(20px, 9999px, 78px, 0); }
+    100% { clip: rect(76px, 9999px, 44px, 0); }
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS - DARK THEME
+   ============================================ */
+@media (max-width: 768px) {
+    body[data-theme="dark"] .hero-title-main {
+        text-shadow: 0 0 30px rgba(255, 0, 0, 0.8);
+    }
+    
+    body[data-theme="dark"] .service-card {
+        border-width: 1px;
+    }
+}
+
+/* ============================================
+   ACCESSIBILITY - DARK THEME
+   ============================================ */
+body[data-theme="dark"] a:focus,
+body[data-theme="dark"] button:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* ============================================
+   PRINT STYLES - DARK THEME
+   ============================================ */
+@media print {
+    body[data-theme="dark"] {
+        background-color: white;
+        color: black;
+    }
+    
+    body[data-theme="dark"] .site-header,
+    body[data-theme="dark"] .site-footer {
+        background-color: white;
+        color: black;
+        border-color: black;
+    }
+}

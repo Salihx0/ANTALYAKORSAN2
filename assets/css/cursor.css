@@ -1,0 +1,481 @@
+/**
+ * CUSTOM CURSOR - TAKSİ TEKERİ
+ * Antalya Korsan Taksi
+ * 
+ * @package AntalyaKorsanTaksi
+ * @version 1.0
+ * @date 18 Kasım 2025
+ * @author Burak KAYA
+ */
+
+/* ============================================
+   CURSOR DISABLE DEFAULT
+   ============================================ */
+body {
+    cursor: none;
+}
+
+a, button, input, textarea, select, [role="button"] {
+    cursor: none !important;
+}
+
+/* ============================================
+   CUSTOM CURSOR
+   ============================================ */
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    pointer-events: none;
+    z-index: 10000;
+    transition: transform 0.15s ease-out, opacity 0.15s ease-out;
+    will-change: transform;
+}
+
+.custom-cursor.hidden {
+    opacity: 0;
+}
+
+/* ============================================
+   CURSOR WHEEL (TAKSİ TEKERİ)
+   ============================================ */
+.cursor-wheel {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-origin: center;
+}
+
+/* Outer Wheel */
+.cursor-wheel::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    border: 3px solid #FFD700;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5),
+                inset 0 0 10px rgba(255, 215, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+/* Inner Hub */
+.cursor-wheel::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    background: linear-gradient(135deg, #FFD700, #FF6B00);
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
+}
+
+/* Wheel Spokes */
+.cursor-spoke {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2px;
+    height: 16px;
+    background: linear-gradient(180deg, #FFD700, transparent);
+    transform-origin: center;
+    opacity: 0.8;
+}
+
+.cursor-spoke:nth-child(1) { transform: translate(-50%, -50%) rotate(0deg); }
+.cursor-spoke:nth-child(2) { transform: translate(-50%, -50%) rotate(45deg); }
+.cursor-spoke:nth-child(3) { transform: translate(-50%, -50%) rotate(90deg); }
+.cursor-spoke:nth-child(4) { transform: translate(-50%, -50%) rotate(135deg); }
+.cursor-spoke:nth-child(5) { transform: translate(-50%, -50%) rotate(180deg); }
+.cursor-spoke:nth-child(6) { transform: translate(-50%, -50%) rotate(225deg); }
+.cursor-spoke:nth-child(7) { transform: translate(-50%, -50%) rotate(270deg); }
+.cursor-spoke:nth-child(8) { transform: translate(-50%, -50%) rotate(315deg); }
+
+/* ============================================
+   CURSOR STATES
+   ============================================ */
+
+/* Hover State */
+.custom-cursor.hover .cursor-wheel::before {
+    width: 50px;
+    height: 50px;
+    border-width: 4px;
+    border-color: #FF6B00;
+    box-shadow: 0 0 20px rgba(255, 107, 0, 0.8),
+                inset 0 0 15px rgba(255, 107, 0, 0.5);
+}
+
+.custom-cursor.hover .cursor-wheel::after {
+    width: 16px;
+    height: 16px;
+    background: linear-gradient(135deg, #FF6B00, #FFD700);
+}
+
+/* Click State */
+.custom-cursor.click .cursor-wheel::before {
+    width: 35px;
+    height: 35px;
+    border-width: 5px;
+    animation: clickPulse 0.3s ease-out;
+}
+
+@keyframes clickPulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* Drag State */
+.custom-cursor.drag .cursor-wheel {
+    animation: wheelSpin 0.5s linear infinite;
+}
+
+@keyframes wheelSpin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ============================================
+   CURSOR TRAIL
+   ============================================ */
+.cursor-trail {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background: #FFD700;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+}
+
+.cursor-trail.fade {
+    opacity: 0;
+    transform: scale(0);
+}
+
+/* ============================================
+   CURSOR PARTICLES
+   ============================================ */
+.cursor-particle {
+    position: fixed;
+    width: 4px;
+    height: 4px;
+    background: #FFD700;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    animation: particleFloat 1s ease-out forwards;
+}
+
+@keyframes particleFloat {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(var(--tx), var(--ty)) scale(0);
+    }
+}
+
+/* ============================================
+   TEXT CURSOR
+   ============================================ */
+.custom-cursor.text .cursor-wheel::before {
+    width: 2px;
+    height: 30px;
+    border-radius: 2px;
+    border: none;
+    background: #FFD700;
+    animation: textBlink 1s infinite;
+}
+
+.custom-cursor.text .cursor-wheel::after {
+    display: none;
+}
+
+.custom-cursor.text .cursor-spoke {
+    display: none;
+}
+
+@keyframes textBlink {
+    0%, 49% {
+        opacity: 1;
+    }
+    50%, 100% {
+        opacity: 0;
+    }
+}
+
+/* ============================================
+   LOADING CURSOR
+   ============================================ */
+.custom-cursor.loading .cursor-wheel {
+    animation: loadingSpin 1s linear infinite;
+}
+
+.custom-cursor.loading .cursor-wheel::before {
+    border-top-color: #FF6B00;
+    border-right-color: transparent;
+    border-bottom-color: #FFD700;
+    border-left-color: transparent;
+}
+
+@keyframes loadingSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ============================================
+   THEME VARIATIONS
+   ============================================ */
+
+/* Corporate Theme */
+body[data-theme="corporate"] .cursor-wheel::before,
+body:not([data-theme]) .cursor-wheel::before {
+    border-color: #FFD700;
+}
+
+body[data-theme="corporate"] .cursor-wheel::after,
+body:not([data-theme]) .cursor-wheel::after {
+    background: linear-gradient(135deg, #FFD700, #FF6B00);
+}
+
+body[data-theme="corporate"] .cursor-spoke,
+body:not([data-theme]) .cursor-spoke {
+    background: linear-gradient(180deg, #FFD700, transparent);
+}
+
+/* Dark Theme */
+body[data-theme="dark"] .cursor-wheel::before {
+    border-color: #FF0000;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.8),
+                inset 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+body[data-theme="dark"] .cursor-wheel::after {
+    background: linear-gradient(135deg, #FF0000, #8B0000);
+    box-shadow: 0 0 10px rgba(255, 0, 0, 1);
+}
+
+body[data-theme="dark"] .cursor-spoke {
+    background: linear-gradient(180deg, #FF0000, transparent);
+}
+
+body[data-theme="dark"] .cursor-trail {
+    background: #FF0000;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+}
+
+body[data-theme="dark"] .cursor-particle {
+    background: #FF0000;
+}
+
+/* Light Theme */
+body[data-theme="light"] .cursor-wheel::before {
+    border-color: #007BFF;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5),
+                inset 0 0 10px rgba(0, 123, 255, 0.3);
+}
+
+body[data-theme="light"] .cursor-wheel::after {
+    background: linear-gradient(135deg, #007BFF, #FFA500);
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.8);
+}
+
+body[data-theme="light"] .cursor-spoke {
+    background: linear-gradient(180deg, #007BFF, transparent);
+}
+
+body[data-theme="light"] .cursor-trail {
+    background: #007BFF;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.8);
+}
+
+body[data-theme="light"] .cursor-particle {
+    background: #007BFF;
+}
+
+/* ============================================
+   CURSOR EFFECTS
+   ============================================ */
+
+/* Magnetic Effect */
+.custom-cursor.magnetic {
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Ripple Effect */
+.cursor-ripple {
+    position: fixed;
+    border: 2px solid #FFD700;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9997;
+    animation: rippleExpand 0.6s ease-out forwards;
+}
+
+@keyframes rippleExpand {
+    0% {
+        width: 40px;
+        height: 40px;
+        opacity: 1;
+    }
+    100% {
+        width: 100px;
+        height: 100px;
+        opacity: 0;
+    }
+}
+
+/* Glow Effect */
+.custom-cursor.glow .cursor-wheel::before {
+    animation: glowPulse 2s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+    0%, 100% {
+        box-shadow: 0 0 10px rgba(255, 215, 0, 0.5),
+                    inset 0 0 10px rgba(255, 215, 0, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 25px rgba(255, 215, 0, 1),
+                    inset 0 0 15px rgba(255, 215, 0, 0.6);
+    }
+}
+
+/* ============================================
+   SPECIAL CURSORS
+   ============================================ */
+
+/* Taxi Emoji Cursor */
+.custom-cursor.taxi .cursor-wheel::before {
+    content: '🚕';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    border: none;
+    background: none;
+    box-shadow: none;
+}
+
+.custom-cursor.taxi .cursor-wheel::after,
+.custom-cursor.taxi .cursor-spoke {
+    display: none;
+}
+
+/* Pointer Cursor */
+.custom-cursor.pointer .cursor-wheel::before {
+    width: 20px;
+    height: 20px;
+    background: #FFD700;
+    border: 2px solid #FF6B00;
+}
+
+/* Grab Cursor */
+.custom-cursor.grab .cursor-wheel::before {
+    content: '✋';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    border: none;
+    background: none;
+    box-shadow: none;
+}
+
+.custom-cursor.grab .cursor-wheel::after,
+.custom-cursor.grab .cursor-spoke {
+    display: none;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 768px) {
+    body {
+        cursor: auto;
+    }
+    
+    .custom-cursor,
+    .cursor-trail,
+    .cursor-particle,
+    .cursor-ripple {
+        display: none !important;
+    }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+    .custom-cursor,
+    .cursor-trail,
+    .cursor-particle {
+        animation: none !important;
+        transition: none !important;
+    }
+    
+    .cursor-wheel {
+        animation: none !important;
+    }
+}
+
+/* Touch Devices */
+@media (hover: none) and (pointer: coarse) {
+    body {
+        cursor: auto;
+    }
+    
+    .custom-cursor,
+    .cursor-trail,
+    .cursor-particle {
+        display: none !important;
+    }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+@media print {
+    .custom-cursor,
+    .cursor-trail,
+    .cursor-particle,
+    .cursor-ripple {
+        display: none !important;
+    }
+}
+
+/* ============================================
+   PERFORMANCE OPTIMIZATION
+   ============================================ */
+.custom-cursor,
+.cursor-trail,
+.cursor-particle {
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
